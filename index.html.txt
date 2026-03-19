@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Nishaa my cutuu ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 10vh;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.4em;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 25px;
+      background: white;
+      color: #ff4b5c;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff4b5c;
+      color: white;
+    }
+
+    .hidden-message {
+      display: none;
+      margin-top: 30px;
+      font-size: 1.4em;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 40px 20px;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      color: red;
+      font-size: 20px;
+      animation: float 5s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Happy Birthday Nishuu ❤️</h1>
+  <p>You are the most beautiful part of my life 💖</p>
+
+  <button onclick="showMessage()">Click for Surprise 🎁</button>
+
+  <div class="hidden-message" id="message">
+    💖 Nishuu, you make my world brighter every day 💖<br>
+    I am so lucky to have you in my life ❤️<br>
+    I promise to always love you more each day 💕
+  </div>
+
+  <div class="gallery">
+    <img src="IMG_1053.jpeg" alt="memory1">
+    <img src="IMG_3695.jpeg" alt="memory2">
+    <img src="IMG_3833.jpeg" alt="memory3">
+    <img src="IMG_3031.jpeg" alt="memory4">
+  </div>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="tere-utto-sab-vaar-deyan-into-you-320kbps-mr-jatin_tFmMaMoW.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="hearts" id="hearts"></div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('message').style.display = 'block';
+      document.getElementById('bg-music').play();
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      document.getElementById('hearts').appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
